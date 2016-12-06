@@ -18,7 +18,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //routes
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/tables", function(req, res) {
@@ -45,4 +45,4 @@ app.post("/api/newtable", function(req, res) {
 
 app.listen(PORT, function() {
 	console.log("Server listening on port " + PORT);
-})
+});
