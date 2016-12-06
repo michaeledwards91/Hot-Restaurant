@@ -84,26 +84,26 @@
     
   </div>
 
-<!--   <script type="text/javascript">
+  <script type="text/javascript">
     // Question: What does this code do?
     $("#addBtn").on("click", function() {
-      var newCharacter = {
+      var newTable = {
         name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#forcepoints").val().trim()
+        phone: $("#number").val().trim(),
+        email: $("#email").val().trim(),
+        uniqueID: $("#uniqueID").val().trim()
       };
 
       // Question: What does this code do??
-      $.post("http://localhost:3000/api/new", newCharacter)
+      $.post("http://localhost:3000/api/newtable", newTable)
       .done(function(data) {
         console.log(data);
-        alert("Adding character...");
+        alert("Your reservation has been placed");
       });
 
       return false;
     });
-  </script> -->
+  </script>
 
 </body>
 </html>
