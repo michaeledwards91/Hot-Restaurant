@@ -22,42 +22,42 @@ var waitList = [];
 
 //routes
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/tables", function(req, res) {
-	res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 app.get("/reservation", function(req, res) {
-	res.sendFile(path.join(__dirname, "reservation.html"));
+    res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
 app.get("/api/tables", function(req, res) {
-	//respond json of list of current 5 tables
-	res.json(reservations);
+    //respond json of list of current 5 tables
+    res.json(reservations);
 });
 
 app.get("/api/waitlist", function(req, res) {
-	//respond json list of waitlist tables
-	res.json(waitList);
+    //respond json list of waitlist tables
+    res.json(waitList);
 })
 
 app.post("/api/newtable", function(req, res) {
-	var newTable = req.body;
-	if (reservations.length < 5) {
-		newTable.status = "reservation";
-		reservations.push(newTable);
-	} else {
-		newTable.status = "waitlist";
-		waitList.push(newTable);
-	}
-	res.json(newTable);
+    var newTable = req.body;
+    if (reservations.length < 5) {
+        newTable.status = "reservation";
+        reservations.push(newTable);
+    } else {
+        newTable.status = "waitlist";
+        waitList.push(newTable);
+    }
+    res.json(newTable);
 });
+
+
 
 app.listen(PORT, function() {
-	console.log("Server listening on port " + PORT);
+    console.log("Server listening on port " + PORT);
 });
 
-// Sending Emails
-// =======================================================
