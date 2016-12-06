@@ -59,7 +59,7 @@ app.get("/api/waitlist", function(req, res) {
 app.post("/api/newtable", function(req, res) {
 	console.log(req.body);
 	var newTable = req.body;
-	if (reservations.length <= 5) {
+	if (reservations.length < 5) {
 		reservations.push(newTable);
 	} else {
 		waitList.push(newTable);
