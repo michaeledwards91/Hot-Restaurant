@@ -1,0 +1,12 @@
+.jumbotron{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+
+#addBtn{
+	float: left;
+}
