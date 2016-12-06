@@ -18,7 +18,7 @@ function handleSayHello(req, res) {
 var text = 'Hello world from' ;
 var mailOptions = {
     from: 'hector1', 
-    to: 'shvetacrane@gmail.com', //waitlist[0].mail
+    to: 'user@gmail.com', //waitlist[0].mail
     subject: 'Your Reservation is Ready', 
     text: 'Your Reservation is Ready. /n/n-Hot-Restaurant'
 };
