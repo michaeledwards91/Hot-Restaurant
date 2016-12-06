@@ -29,9 +29,18 @@ app.get("/reserve", function(req, res) {
 	res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-app.post("/api/newtable", function(req, res) {
-	
+app.get("/api/tables", function(req, res) {
+	//respond json of list of current 5 tables
+});
+
+app.get("/api/waitlist", function(req, res) {
+	//respond json list of waitlist tables
 })
+
+app.post("/api/newtable", function(req, res) {
+	var newTable = req.body;
+	console.log(newTable);
+});
 
 
 app.listen(PORT, function() {
