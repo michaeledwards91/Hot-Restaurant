@@ -19,20 +19,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 var reservations = [];
 var waitList = [];
 
-/*	{
-		"name": "potato",
-		"phoneNumber": "111-222-3333",
-		"email": "a@b.edu",
-		"id": "asdf"
-	},
-	{
-		"name": "potato2",
-		"phoneNumber": "123-456-9090",
-		"email": "thedonald@whitehouse.gov",
-		"id": "trump"
-	}
-*/
-
 //routes
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
@@ -57,18 +43,14 @@ app.get("/api/waitlist", function(req, res) {
 })
 
 app.post("/api/newtable", function(req, res) {
-	console.log(req.body);
 	var newTable = req.body;
 	if (reservations.length < 5) {
 		reservations.push(newTable);
 	} else {
 		waitList.push(newTable);
 	}
-	console.log(reservations);
-	// var newTable = req.body;
-	// console.log(newTable);
+	res.json(newTable);
 });
-
 
 app.listen(PORT, function() {
 	console.log("Server listening on port " + PORT);
