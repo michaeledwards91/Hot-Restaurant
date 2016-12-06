@@ -45,10 +45,13 @@ app.get("/api/waitlist", function(req, res) {
 app.post("/api/newtable", function(req, res) {
 	var newTable = req.body;
 	if (reservations.length < 5) {
+		newTable.status = "reservation";
 		reservations.push(newTable);
 	} else {
+		newTable.status = "waitlist";
 		waitList.push(newTable);
 	}
+	console.log(res);
 	res.json(newTable);
 });
 
