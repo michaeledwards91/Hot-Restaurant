@@ -158,7 +158,14 @@
       $.post("http://localhost:3000/api/newtable", newTable)
       .done(function(data) {
         console.log(data);
-        alert("Your reservation has been placed");
+        if(data.status ==="reservation"){
+          alert("Your reservation has been placed");
+        }else{
+          alert("You are on the waitlist");
+
+        }
+
+        
       });
 
       return false;

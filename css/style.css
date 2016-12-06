@@ -19,7 +19,7 @@
 	padding-right: 3px;
 }
 
-/*.mainButtonRow{
+.mainButtonRow{
 	border-style: solid none none none;
 	border-width: 1px;
 	border-color: gray;
@@ -28,4 +28,4 @@
 	display: flex;
 	justify-content: center;
 
-}*/
+}
