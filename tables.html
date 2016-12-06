@@ -1,143 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<style type="text/css">
-	.jumbotron{
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-
-}
-
-#addBtn{
-	float: left;
-}
-
-
-.apiLinks .left{
-	border-style: none solid none none;
-	border-width: 1px;
-	border-color: black;
-	padding-right: 3px;
-}
-
-.mainButtonRow{
-	border-style: solid none none none;
-	border-width: 1px;
-	border-color: gray;
-	padding-top: 50px;
-	min-width: 700px;
-	display: flex;
-	justify-content: center;
-
-}
-
-
-.reservationList{
-	display: flex;
-
-
-}
-
-.reservationList button{
-	margin-right: 30px;
-	margin-bottom: 20px;
-}
-
-
-.waitList{
-	display: flex;
-
-
-}
-
-.waitList button{
-	margin-right: 30px;
-	margin-bottom: 20px;
-}
-
-</style>
-	<meta charset="utf-8">
-	<title>Hot Restaurant Home Page</title>
-	<!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+    .jumbotron {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #addBtn {
+        float: left;
+    }
+    
+    .apiLinks .left {
+        border-style: none solid none none;
+        border-width: 1px;
+        border-color: black;
+        padding-right: 3px;
+    }
+    
+    .mainButtonRow {
+        border-style: solid none none none;
+        border-width: 1px;
+        border-color: gray;
+        padding-top: 50px;
+        min-width: 700px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .reservationList {
+        display: flex;
+    }
+    
+    .reservationList button {
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .waitList {
+        display: flex;
+    }
+    
+    .waitList button {
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    </style>
+    <meta charset="utf-8">
+    <title>Hot Restaurant Home Page</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-	<div class="container center">
-		<div class="jumbotron center">
-		  <h1><span class="glyphicon glyphicon-fire"></span> Hot Restaurant App</h1>
-		  <hr>
-		  <p class = "center">We only have 5 tables! Book your seat before they are all gone!</p>
-		 <!--  <row>
+    <div class="container center">
+        <div class="jumbotron center">
+            <h1><span class="glyphicon glyphicon-fire"></span> Hot Restaurant App</h1>
+            <hr>
+            <p class="center">We only have 5 tables! Book your seat before they are all gone!</p>
+            <!--  <row>
 		  <div class="col-md-5"> -->
-		  	<p><a class="btn btn-danger btn-lg center" href="/reservation" role="button"><span class="glyphicon glyphicon-envelope"></span> Make Reservation</a>
-		  	<a href="/"><button type="button" class="btn btn-lg"><span class="glyphicon glyphicon-home"></span> Home</button></a></p>
-
-		  <!-- </div>
+            <p><a class="btn btn-danger btn-lg center" href="/reservation" role="button"><span class="glyphicon glyphicon-envelope"></span> Make Reservation</a>
+                <a href="/">
+                    <button type="button" class="btn btn-lg"><span class="glyphicon glyphicon-home"></span> Home</button>
+                </a>
+            </p>
+            <!-- </div>
 		  </row> -->
-		  </div>
-
-		  <div class="panel panel-default">
-        <div class="panel-heading">Current Reservation</div>
-        	
-        <div class="panel-body">
-        	<div class="reservations">
-
-        	</div>
         </div>
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">Waiting List</div>
-        <div class="panel-body">
-        	<div class="waitlist">
-        		
-        	</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Current Reservation</div>
+            <div class="panel-body">
+                <div class="reservations">
+                </div>
+            </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Waiting List</div>
+            <div class="panel-body">
+                <div class="waitlist">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
+        </footer>
     </div>
-		
-	
-
-	<footer>
-		<p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
-	</footer>
-	</div>
-
-<script>
-
-
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-//get from api
-	$.ajax({
-          url: "http://localhost:3000/api/tables", METHOD: "GET" 
+    <script>
+    $(document).ready(function() {
+        console.log("ready!");
+        //get from api
+        $.ajax({
+            url: "http://localhost:3000/api/tables",
+            METHOD: "GET"
         }).done(function(res) {
-        	for(var i = 0 ; i < res.length; i++){
-           
-          		$(".reservations").append("<div class= \"reservationList\">"+"<button class=\"btn btn-primary\">"+i+"</button>"+"<p>"+res[i].name+ "</p>"+"</div>");
-          	}
-        	
+            for (var i = 0; i < res.length; i++) {
+                $(".reservations").append("<div class= \"reservationList\">" + "<button class=\"btn btn-primary\">" + i + "</button>" + "<p>" + res[i].name + "</p>" + "</div>");
+            }
         });
 
         $.ajax({
-          url: "http://localhost:3000/api/waitlist", METHOD: "GET" 
+            url: "http://localhost:3000/api/waitlist",
+            METHOD: "GET"
         }).done(function(res) {
-        	for(var i = 0 ; i < res.length; i++){
-           
-          		$(".waitlist").append("<div class= \"waitList\">"+"<button class=\"btn btn-primary\">"+i+"</button>"+"<p>"+res[i].name+ "</p>"+"</div>");
-          	}
+            for (var i = 0; i < res.length; i++) {
+
+                $(".waitlist").append("<div class= \"waitList\">" + "<button class=\"btn btn-primary\">" + i + "</button>" + "<p>" + res[i].name + "</p>" + "</div>");
+            }
         });
 
 
 
-});
-	   
-    
-</script>	
+    });
+    </script>
 </body>
+
 </html>
