@@ -9,6 +9,10 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
+// Using Twilio to send notifications
+var phoneClient = require("./twilio.js");
+// phoneClient("Enter a phone number with +1 in front of the 10 digits");
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -57,3 +61,4 @@ app.post("/api/newtable", function(req, res) {
 app.listen(PORT, function() {
 	console.log("Server listening on port " + PORT);
 });
+
