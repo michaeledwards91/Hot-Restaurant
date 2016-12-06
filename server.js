@@ -52,7 +52,6 @@ app.post("/api/newtable", function(req, res) {
 		newTable.status = "waitlist";
 		waitList.push(newTable);
 	}
-	console.log(res);
 	res.json(newTable);
 });
 
